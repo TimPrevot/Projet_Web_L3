@@ -7,8 +7,8 @@ const songs = require('../data/articles')
 const client = new Client({
     user: 'postgres',
     host: 'localhost',
-    password: 'abcd1234',
-    database: 'Final_Projet_Web_L3'
+    password: '!redragonx91!',
+    database: 'Projet_web_l3'
 })
 
 client.connect()
