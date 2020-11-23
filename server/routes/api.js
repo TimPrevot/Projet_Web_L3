@@ -76,6 +76,19 @@ router.post('/register', async (req, res) => {
     res.send('ok')
 })
 
+// Récupération de l'utilisateur connecté
+router.get('/me', async (req, res) => {
+    if (typeof req.session.userId === 'undefined') {
+        res.status(401).json({ message: 'Utilisateur non connecté' })
+        return
+    }
+    const result = await client.query({
+        text: 'SELECT id, email, pseudo FROM users WHERE id=$1',
+        values: [req.session.userId]
+    })
+    res.json(result.rows[0])
+})
+
 // Attribution d'un panier à l'utilisateur
 router.use((req, res, next) => {
     if(typeof req.session.panier === 'undefined') {
@@ -84,9 +97,9 @@ router.use((req, res, next) => {
     next()
 })
 
-// Récupération de tous les articles
+// Récupération de toutes les chansons
 router.get('/songs', async (req, res) => {
-    res.json(req.session.songs)
+    res.json(songs)
 })
 
 // Récupération du panier

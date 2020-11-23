@@ -18,14 +18,14 @@
           <tr>
             <td class="hidden pb-4 md:table-cell">
               <a href="#">
-                <img src="../../assets/img/FW_Slim_Case.png" class="w-20 rounded" alt="Thumbnail">
+                <img src="../assets/img/FW_Slim_Case.png" class="w-20 rounded" alt="Thumbnail">
               </a>
             </td>
             <td>
               <a href="#">
                 <p class="mb-2 md:ml-4">Earphone</p>
                 <form> <!--action="" method="POST"-->
-                  <button @click="removeFromPanier(article.id)" class="text-indigo-700 md:ml-4">
+                  <button @click="removeFromPanier(song.id)" class="text-indigo-700 md:ml-4">
                     <small>(Retirer du panier)</small>
                   </button>
                 </form>
@@ -136,7 +136,7 @@
 <script>
 module.exports = {
   props: {
-    songs: [],
+    songs: { type: Array, default: [] },
     panier: { type: Object }
   },
   name: 'Panier',

@@ -30,13 +30,26 @@ var app = new Vue({
             createdAt: null,
             updatedAt: null,
             articles: []
-        }
+        },
+        user: {},
+        isConnected: false
     },
     async mounted () {
         const res = await axios.get('/api/songs')
-        this.articles = res.data
+        this.songs = res.data
         const res2 = await axios.get('/api/panier')
         this.panier = res2.data
+        try {
+            const res3 = await axios.get('/me')
+            this.user = res3.data
+            this.isConnected = true
+        } catch (err) {
+            if (err.response?.status === 401) {
+                this.isConnected = false
+            } else {
+                console.log('error', err)
+            }
+        }
     },
     methods: {
         async addToPanier (articleId) {
@@ -48,7 +61,7 @@ var app = new Vue({
             this.panier.articles.push(response.data)
         },
         async removeFromPanier (articleId) {
-            const response = await axios.delete('/api/panier' + articleId)
+            const response = await axios.delete('/api/panier/' + articleId)
             const index = this.panier.articles.findIndex(article => article.id === articleId)
             this.panier.articles.splice(index, 1)
         },
