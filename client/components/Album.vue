@@ -160,3 +160,10 @@ module.exports = {
   }
 }
 </script>
+
+<style>
+  #album{
+    width : 200px;
+    height : 200px;
+  }
+</style>
