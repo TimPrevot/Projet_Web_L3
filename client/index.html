@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="icon" href="https://static-cdn.jtvnw.net/jtv_user_pictures/5c8624bb-58df-4152-bde9-158487049a5f-profile_image-70x70.png" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
-    <title><%= htmlWebpackPlugin.options.title %></title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/http-vue-loader/src/httpVueLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
@@ -16,43 +15,43 @@
 </head>
 <body>
 <div id="app" >
-    <div class="w-screen flex flex-row items-center p-1 justify-between bg-indigo-600 shadow-xs">
-        <div class="hidden md:flex items-center justify-self-center md:space-x-10">
+        <div class="min-w-screen flex bg-indigo-600 shadow-xs grid grid-cols-3">
+            <div class="md:flex col-start-2 items-center justify-self-center md:space-x-10">
             <nav class="hidden md:flex space-x-5">
-                <router-link class="text-base font-medium text-white hover:text-gray-900" :to="{name: 'Presentation'}">Ma présentation</router-link>
-                <router-link class="text-base font-medium text-white hover:text-gray-900" :to="{name: 'Reseaux'}">Mes Réseaux</router-link>
+            <router-link class="text-base font-medium text-white hover:text-gray-900" :to="{name: 'Presentation'}">Ma présentation</router-link>
+            <router-link class="text-base font-medium text-white hover:text-gray-900" :to="{name: 'Reseaux'}">Mes Réseaux</router-link>
             </nav>
             <div class="md:flex">
                 <router-link :to="{name: 'Presentation'}">
-                    <span class="sr-only">Logo</span>
-                    <img  src="https://static-cdn.jtvnw.net/jtv_user_pictures/5c8624bb-58df-4152-bde9-158487049a5f-profile_image-70x70.png" alt="">
+                <span class="sr-only">Logo</span>
+                <img  src="https://static-cdn.jtvnw.net/jtv_user_pictures/5c8624bb-58df-4152-bde9-158487049a5f-profile_image-70x70.png" alt="">
                 </router-link>
             </div>
             <nav class="hidden md:flex space-x-5">
                 <router-link class="text-base font-medium text-white hover:text-gray-900" :to="{name: 'Album'}">L'album</router-link>
                 <router-link class="text-base font-medium text-white hover:text-gray-900" :to="{name: 'Panier'}">Mon panier</router-link>
             </nav>
-        </div>
-        <div>
-            <div class="hidden self md:flex items-center justify-self-end" >
-                <router-link class="whitespace-nowrap text-base font-medium text-white hover:text-gray-900" :to="{name: 'Register'}">S'enregistrer</router-link>
-                <router-link class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-700 hover:bg-indigo-800" :to="{name: 'Login'}">Se connecter</router-link>
             </div>
-            <div class="hidden ml-8 self md:flex items-center justify-self-end" v-show="false">
-                <router-link class="whitespace-nowrap text-base font-medium text-white hover:text-gray-900" :to="{name: 'Presentation'}">Déconnexion</router-link>
+            <div class="flex col-start-3 justify-self-end">
+                <div class="flex items-center" >
+                    <router-link class="whitespace-nowrap text-base font-medium text-white hover:text-gray-900" :to="{name: 'Register'}">S'enregistrer</router-link>
+                    <router-link class="ml-8 whitespace-nowrap px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-700 hover:bg-indigo-800" :to="{name: 'Login'}">Se connecter</router-link>
+                </div>
+                <div class="hidden ml-8 self md:flex items-center justify-self-end" v-show="false">
+                    <router-link class="whitespace-nowrap text-base font-medium text-white hover:text-gray-900" :to="{name: 'Presentation'}">Déconnexion</router-link>
+                </div>
             </div>
         </div>
-    </div>
-    <router-view
-            :user="user"
-            :isConnected="isConnected"
-            :songs="songs"
-            :panier="panier"
-            @connect-client="connectClient"
-            @add-client="addClient"
-            @add-to-panier="addToPanier"
-            @remove-from-panier="removeFromPanier"
-    ></router-view>
+        <router-view
+        :user="user"
+        :isConnected="isConnected"
+        :songs="songs"
+        :panier="panier"
+        @connect-client="connectClient"
+        @add-client="addClient"
+        @add-to-panier="addToPanier"
+        @remove-from-panier="removeFromPanier"
+        ></router-view>
 </div>
 <script src="/vue-application.js"></script>
 </body>
