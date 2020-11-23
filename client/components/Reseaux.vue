@@ -15,7 +15,7 @@
                     <div class="flex">
                     <div class="flex-shrink-0">
                         <div class="flex items-center justify-center h-12 w-12 rounded-md text-white">
-                            <img src="./twitch.svg" alt="">
+                            <img src="../assets/img/twitch.svg" alt="">
                         </div>
                     </div>
                     <div class="ml-4">
@@ -35,7 +35,7 @@
                     <div class="flex">
                     <div class="flex-shrink-0">
                         <div class="flex items-center justify-center h-12 w-12 rounded-md text-white">
-                            <img src="./youtube.svg" alt="">
+                            <img src="../assets/img/youtube.svg" alt="">
                         </div>
                     </div>
                     <div class="ml-4">
@@ -55,7 +55,7 @@
                     <div class="flex">
                     <div class="flex-shrink-0">
                         <div class="flex items-center justify-center h-12 w-12 rounded-md text-white">
-                            <img src="./soundcloud.svg" alt="">
+                            <img src="../assets/img/soundcloud.svg" alt="">
                         </div>
                     </div>
                     <div class="ml-4">
@@ -75,7 +75,7 @@
                     <div class="flex">
                     <div class="flex-shrink-0">
                         <div class="flex items-center justify-center h-12 w-12 rounded-mdtext-white">
-                            <img src="./instagram.svg" alt=""><br>
+                            <img src="../assets/img/instagram.svg" alt=""><br>
                         </div>
                     </div>
                     <div class="ml-4">
@@ -97,7 +97,7 @@
             <div class="mt-4 max-w-2xl lg:mx-auto flex">
                     <div class="flex-shrink-0">
                         <div class="flex items-center justify-center h-12 w-12 rounded-md text-white">
-                            <img src="./twitter.svg" alt="">
+                            <img src="../assets/img/twitter.svg" alt="">
                         </div>
                     </div>
                     <div class="ml-4">
