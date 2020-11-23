@@ -7,8 +7,8 @@ const songs = require('../data/articles')
 const client = new Client({
     user: 'postgres',
     host: 'localhost',
-    password: '!redragonx91!',
-    database: 'Projet_web_l3'
+    password: 'abcd1234',
+    database: 'Final_Projet_Web_L3'
 })
 
 client.connect()
@@ -118,7 +118,7 @@ router.post('/panier', (req, res) => {
     const articleIsAlreadyInPanier = req.session.panier.articles.find(a => a.id === articleId) !== undefined
 
     if (articleExists && !articleIsAlreadyInPanier) {
-        req.session.panier.articles.push(songs.find)
+        req.session.panier.articles.push(songs.find(a => a.id === articleId))
         res.json({ id: articleId })
     } else {
         res.status(400).json({ message: 'Invalid parameters' })
