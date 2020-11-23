@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-200 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+  <div class="min-h-screen flex items-center justify-center bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="w-full lg:w-1/2 p-5 rounded-lg lg:rounded-l-none">
       <div class="px-8 mb-4 text-center">
         <h3 class="pt-4 mb-2 text-2xl">Vous avez oublié votre mot de passe?</h3>
       </div>
-      <form class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+      <form class="px-8 pt-6 pb-8 mb-4 rounded">
         <div class="mb-4">
           <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
             E-mail

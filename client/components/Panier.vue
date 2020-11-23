@@ -7,45 +7,34 @@
           <tr class="h-12 uppercase">
             <th class="hidden md:table-cell"></th>
             <th class="text-left">Produit</th>
-            <th class="lg:text-right text-left pl-5 lg:pl-0">
-              <span class="lg:hidden" title="Quantity">Qtd</span>
-              <span class="hidden lg:inline">Quantité</span>
-            </th>
+            <th class="text-left">Quantité</th>
             <th class="text-right">Prix</th>
           </tr>
           </thead>
           <tbody>
-          <div id="articles">
-            <tr v-for="article in panier.articles">
-              <td class="hidden pb-4 md:table-cell">
-                <a href="#">
+            <tr v-for="article in panier.articles" :key="article.id">
+              <td class="pb-4 md:table-cell">
                   <img src="../assets/img/FW_Slim_Case.png" class="w-20 rounded" alt="Thumbnail">
-                </a>
               </td>
               <td>
-                <a href="#">
-                  <p class="mb-2 md:ml-4">{{ article.title }}</p>
+                  <p class="justify-between mb-2 md:ml-4">{{ article.title }}</p>
                   <form> <!--action="" method="POST"-->
                     <button @click="removeFromPanier(article.id)" class="text-indigo-700 md:ml-4">
                       <small>(Retirer du panier)</small>
                     </button>
                   </form>
-                </a>
               </td>
-              <td class="justify-center md:justify-end md:flex mt-6">
-                <div class="w-20 h-10">
-                  <div class="relative flex flex-row w-full h-8">
-
-                  </div>
+              <td class="hidden text-left md:table-cell">
+                <span class="text-sm lg:text-base font-medium">
+                  1
+                </span>
               </td>
               <td class="hidden text-right md:table-cell">
-              <span class="text-sm lg:text-base font-medium">
-                1 €
-              </span>
+                <span class="text-sm lg:text-base font-medium">
+                  1 €
+                </span>
               </td>
             </tr>
-          </div>
-
           </tbody>
         </table>
         <hr class="pb-6 mt-6">
