@@ -5,7 +5,7 @@
     <!-- header -->
     <div class="flex">
       <div id="album" class="mr-6 w-13 h-13">
-        <img src="../../assets/img/zeventv1.png">
+        <img src="../assets/img/zeventv1.png">
       </div>
       <div class="flex flex-col justify-center">
         <!-- content -->
@@ -69,7 +69,7 @@
 
       <div>
         <ul>
-          <li v-for="(song) in songs" class="flex border-b border-gray-800 hover:bg-gray-800" :key="song.id">
+          <li v-for="song in songs" :key="song.id" class="flex border-b border-gray-800 hover:bg-gray-800">
             <div class="p-3 w-8 flex-shrink-0">{{song.id}}</div>
             <button class="p-3 w-8 flex-shrink-0 outline-none focus:outline-none" @click="play(song)" v-if="!(isplaying===song.id)">
               <svg class="h-6 w-6 outline-none focus:outline-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,7 +77,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </button>
-            <button class="p-3 w-8 flex-shrink-0 outline-none focus:outline-none" @click="pause" v-else>
+            <button class="p-3 w-8 flex-shrink-0 outline-none focus:outline-none" @click="pause()" v-else>
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -101,7 +101,7 @@
 <script>
 module.exports = {
   props: {
-    songs: [],
+    songs: { type: Array, default: [] },
     panier: { type: Object }
   },
   name: 'Album',
@@ -109,13 +109,13 @@ module.exports = {
     return {
       current: {},
       index:0,
-      isplaying : 0,
+      isplaying: 0,
       player: new Audio()
     }
   },
   methods:{
     play (song) {
-      if (typeof song.src != "undefined") {
+      if (typeof song.src !== "undefined") {
         this.current = song;
         this.player.src = this.current.src;
       }
