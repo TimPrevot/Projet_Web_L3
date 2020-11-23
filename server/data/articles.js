@@ -33,7 +33,7 @@ const songs = [
     },
     {
         id: 5,
-        title: 'Midnigh cityt',
+        title: 'Midnight city',
         artist: 'MisterMV feat:m83',
         time: '4:03',
         src: './assets/sons/m83-midnight-city-official-video.mp3',

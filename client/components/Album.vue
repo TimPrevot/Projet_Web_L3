@@ -21,7 +21,7 @@
     <!-- action buttons -->
     <div class="mt-6 flex justify-between">
       <div>
-        <button class="mr-2 bg-green-500 text-green-100 block py-2 px-8 rounded-full">Lire</button>
+        <button class="mr-2 bg-green-500 text-green-100 block py-2 px-8 rounded-full" @click="play(current)">Lire</button>
       </div>
       <section>
         <h2>{{ current.title }}  <span>{{ current.artist }}</span></h2>

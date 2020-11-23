@@ -17,19 +17,19 @@
               <div class="mx-auto max-w-lg ">
                 <div class="py-1">
                   <span class="px-1 text-sm">Pseudo</span>
-                  <input placeholder="" type="text" v-model="pseudo" class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                  <input placeholder="" type="text" v-model="pseudo" class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" required>
                 </div>
                 <div class="py-1">
                   <span class="px-1 text-sm">E-mail</span>
-                  <input placeholder="" type="email" v-model="email" class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                  <input placeholder="" type="email" v-model="email" class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" required>
                 </div>
                 <div class="py-1">
                   <span class="px-1 text-sm">Mot de passe</span>
-                  <input placeholder="" type="password" v-model="password" class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                  <input placeholder="" type="password" v-model="password" class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" required>
                 </div>
                 <div class="py-1">
                   <span class="px-1 text-sm">Confirmation du mot de passe</span>
-                  <input placeholder="" type="password" class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
+                  <input placeholder="" type="password" class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none" required>
                 </div>
                 <div class="flex justify-start">
                   <label class="block font-bold my-4 flex items-center">

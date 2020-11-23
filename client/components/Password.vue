@@ -14,6 +14,7 @@
               id="email"
               type="email"
               placeholder="E-mail"
+              required
           />
         </div>
         <div class="mb-6 text-center">
