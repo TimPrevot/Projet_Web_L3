@@ -12,7 +12,7 @@
           </router-link>
         </p>
       </div>
-      <form class="mt-8 space-y-6" @submit.prevent="connectClient()" method="POST">
+      <form class="mt-8 space-y-6" @submit.prevent="connectClient()">
         <input type="hidden" name="remember" value="true">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
