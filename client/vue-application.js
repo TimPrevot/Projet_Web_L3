@@ -72,14 +72,8 @@ var app = new Vue({
         async connectClient (client) {
             const res3 = await axios.post('/api/login', client)
             this.client = res3.data
-        },
-        async isUserConnected () {
-            const res4 = await axios.get('/me')
-            if (!res4){
-                return 0
-            } else {
-                return 1
-            }
+            this.isConnected = true
+            this.$router.push('/')
         }
     }
 })

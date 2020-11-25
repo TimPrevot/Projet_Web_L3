@@ -33,11 +33,11 @@
             </nav>
             </div>
             <div class="flex col-start-3 justify-self-end">
-                <div class="flex items-center" >
+                <div class="flex items-center" v-if="!isConnected">
                     <router-link class="whitespace-nowrap text-base font-medium text-white hover:text-gray-900" :to="{name: 'Register'}">S'enregistrer</router-link>
                     <router-link class="ml-8 whitespace-nowrap px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-700 hover:bg-indigo-800" :to="{name: 'Login'}">Se connecter</router-link>
                 </div>
-                <div class="hidden ml-8 self md:flex items-center justify-self-end" v-show="false">
+                <div class="hidden ml-8 self md:flex items-center justify-self-end" v-else>
                     <router-link class="whitespace-nowrap text-base font-medium text-white hover:text-gray-900" :to="{name: 'Presentation'}">Déconnexion</router-link>
                 </div>
             </div>

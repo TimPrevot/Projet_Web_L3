@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2e9a9b4-9b05-44a7-b055-bdd1857cefcb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/clear-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/clear-db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/init-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/init-db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/vue-application.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/vue-application.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +60,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.init_db" />
       <item itemvalue="npm.clear_db" />
+      <item itemvalue="npm.init_db" />
       <item itemvalue="npm.start" />
     </list>
     <recent_temporary>
@@ -78,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606320630699</updated>
-      <workItem from="1606320631794" duration="537000" />
+      <workItem from="1606320631794" duration="841000" />
     </task>
     <servers />
   </component>

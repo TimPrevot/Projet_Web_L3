@@ -45,7 +45,7 @@
                     </span>
                   </label>
                 </div>
-                <button class="mt-3 text-lg font-semibold bg-indigo-600 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-indigo-700">
+                <button type="submit" class="mt-3 text-lg font-semibold bg-indigo-600 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-indigo-700">
                   S'enregister
                 </button>
               </div>
