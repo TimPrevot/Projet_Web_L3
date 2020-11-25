@@ -20,6 +20,7 @@ class Panier {
         this.createdAt = new Date()
         this.updatedAt = new Date()
         this.articles = []
+        this.totalPrice = 0
     }
 }
 
@@ -127,6 +128,8 @@ router.post('/panier', (req, res) => {
 
     if (articleExists && !articleIsAlreadyInPanier) {
         req.session.panier.articles.push(songs.find(a => a.id === articleId))
+        req.session.panier.totalPrice += songs.find(a => a.id === articleId).prix
+        console.log('prix total après ajout: ', req.session.panier.totalPrice)
         res.json({ id: articleId })
     } else {
         res.status(400).json({ message: 'Invalid parameters' })
@@ -146,6 +149,8 @@ router.delete('/panier/:articleId', (req, res) => {
     } else {
         const indexToDelete = req.session.panier.articles.findIndex(a => a.id === articleId)
         req.session.panier.articles.splice(indexToDelete, 1)
+        req.session.panier.totalPrice -= articleToRemove.prix
+        console.log('prix total après suppression: ', req.session.panier.totalPrice)
         res.json(req.session.panier)
     }
 })

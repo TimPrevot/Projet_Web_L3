@@ -29,7 +29,8 @@ var app = new Vue({
         panier: {
             createdAt: null,
             updatedAt: null,
-            articles: []
+            articles: [],
+            totalPrice: 0
         },
         user: {},
         isConnected: false
@@ -66,7 +67,7 @@ var app = new Vue({
             this.panier.articles.splice(index, 1)
         },
         async addClient (client) {
-            const res3 = await axios.post('/api/register', client)
+            const res = await axios.post('/api/register', client)
             this.connectClient(client)
         },
         async connectClient (client) {
