@@ -789,9 +789,10 @@ false Zulu
     <database id="2" parent="1" name="Final_Projet_Web_L3">
       <ObjectId>16560</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>899</IntrospectionStateNumber>
+      <IntrospectionStateNumber>908</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|16587|16589|1
+      <Relations>sequence|table|16609|16611|1
+sequence|table|16620|16622|1
 </Relations>
     </database>
     <database id="3" parent="1" name="Projet_web_l3">
@@ -856,7 +857,7 @@ false Zulu
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>900</IntrospectionStateNumber>
+      <IntrospectionStateNumber>909</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="18" parent="2" name="heap">
@@ -926,54 +927,116 @@ false Zulu
     <language id="27" parent="2" name="internal"/>
     <language id="28" parent="2" name="plpgsql"/>
     <language id="29" parent="2" name="sql"/>
-    <sequence id="30" parent="17" name="users_id_seq">
-      <ObjectId>16587</ObjectId>
+    <sequence id="30" parent="17" name="songs_id_seq">
+      <ObjectId>16620</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>897</StateNumber>
+      <StateNumber>907</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
-    <table id="31" parent="17" name="users">
-      <ObjectId>16589</ObjectId>
-      <Outdated>1</Outdated>
+    <sequence id="31" parent="17" name="users_id_seq">
+      <ObjectId>16609</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>897</StateNumber>
+      <StateNumber>905</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <table id="32" parent="17" name="songs">
+      <ObjectId>16622</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>907</StateNumber>
     </table>
-    <column id="32" parent="31" name="id">
+    <table id="33" parent="17" name="users">
+      <ObjectId>16611</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>905</StateNumber>
+    </table>
+    <column id="34" parent="32" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>897</StateNumber>
-      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>907</StateNumber>
+      <DefaultExpression>nextval(&apos;songs_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="33" parent="31" name="pseudo">
+    <column id="35" parent="32" name="title">
       <Position>2</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>897</StateNumber>
+      <StateNumber>907</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="34" parent="31" name="email">
+    <column id="36" parent="32" name="artists">
       <Position>3</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>897</StateNumber>
+      <StateNumber>907</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="35" parent="31" name="password">
+    <column id="37" parent="32" name="time">
       <Position>4</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>897</StateNumber>
+      <StateNumber>907</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="36" parent="31" name="users_pkey">
-      <ObjectId>16596</ObjectId>
-      <StateNumber>897</StateNumber>
+    <column id="38" parent="32" name="src">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>907</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="39" parent="32" name="prix">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>907</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="40" parent="32" name="songs_pkey">
+      <ObjectId>16629</ObjectId>
+      <StateNumber>907</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="37" parent="31" name="users_pkey">
-      <ObjectId>16597</ObjectId>
-      <StateNumber>897</StateNumber>
+    <key id="41" parent="32" name="songs_pkey">
+      <ObjectId>16630</ObjectId>
+      <StateNumber>907</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>songs_pkey</UnderlyingIndexName>
+    </key>
+    <column id="42" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>905</StateNumber>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="43" parent="33" name="pseudo">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>905</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="44" parent="33" name="email">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>905</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="45" parent="33" name="password">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>905</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <index id="46" parent="33" name="users_pkey">
+      <ObjectId>16618</ObjectId>
+      <StateNumber>905</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+    </index>
+    <key id="47" parent="33" name="users_pkey">
+      <ObjectId>16619</ObjectId>
+      <StateNumber>905</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>

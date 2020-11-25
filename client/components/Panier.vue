@@ -17,7 +17,7 @@
               <img src="../assets/img/FW_Slim_Case.png" class="w-20 rounded" alt="Thumbnail">
             </td>
             <td>
-              <h2 class="justify-between mb-2 md:ml-4">{{ article.title }}</h2>
+              <h2 class="justify-between mb-2 md:ml-4">{{ songs[article.id - 1].title }}</h2>
               <button @click="removeFromPanier(article.id)" class="text-indigo-700 md:ml-4">
                 <small>(Retirer du panier)</small>
               </button>
