@@ -12,29 +12,27 @@
           </tr>
           </thead>
           <tbody>
-            <tr v-for="article in panier.articles" :key="article.id">
-              <td class="pb-4 md:table-cell">
-                  <img src="../assets/img/FW_Slim_Case.png" class="w-20 rounded" alt="Thumbnail">
-              </td>
-              <td>
-                  <p class="justify-between mb-2 md:ml-4">{{ article.title }}</p>
-                  <form> <!--action="" method="POST"-->
-                    <button @click="removeFromPanier(article.id)" class="text-indigo-700 md:ml-4">
-                      <small>(Retirer du panier)</small>
-                    </button>
-                  </form>
-              </td>
-              <td class="hidden text-left md:table-cell">
+          <tr v-for="article in panier.articles" :key="article.id">
+            <td class="pb-4 md:table-cell">
+              <img src="../assets/img/FW_Slim_Case.png" class="w-20 rounded" alt="Thumbnail">
+            </td>
+            <td>
+              <h2 class="justify-between mb-2 md:ml-4">{{ article.title }}</h2>
+              <button @click="removeFromPanier(article.id)" class="text-indigo-700 md:ml-4">
+                <small>(Retirer du panier)</small>
+              </button>
+            </td>
+            <td class="hidden text-left md:table-cell">
                 <span class="text-sm lg:text-base font-medium">
                   1
                 </span>
-              </td>
-              <td class="hidden text-right md:table-cell">
+            </td>
+            <td class="hidden text-right md:table-cell">
                 <span class="text-sm lg:text-base font-medium">
                   1 €
                 </span>
-              </td>
-            </tr>
+            </td>
+          </tr>
           </tbody>
         </table>
         <hr class="pb-6 mt-6">
@@ -49,7 +47,7 @@
                   Sous Total
                 </div>
                 <div class="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                  {{ prixTotal }}
+                  {{ panier.totalPrice }} €
                 </div>
               </div>
               <div class="flex justify-between pt-4 border-b">
@@ -65,12 +63,17 @@
                   Total
                 </div>
                 <div class="lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900">
-                  {{ prixTotal }}
+                  {{ panier.totalPrice }} €
                 </div>
               </div>
               <a href="#">
-                <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-indigo-600 rounded-full shadow item-center hover:bg-indigo-700 focus:shadow-outline focus:outline-none">
-                  <svg aria-hidden="true" data-prefix="far" data-icon="credit-card" class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M527.9 32H48.1C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48.1 48h479.8c26.6 0 48.1-21.5 48.1-48V80c0-26.5-21.5-48-48.1-48zM54.1 80h467.8c3.3 0 6 2.7 6 6v42H48.1V86c0-3.3 2.7-6 6-6zm467.8 352H54.1c-3.3 0-6-2.7-6-6V256h479.8v170c0 3.3-2.7 6-6 6zM192 332v40c0 6.6-5.4 12-12 12h-72c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12zm192 0v40c0 6.6-5.4 12-12 12H236c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12z"/></svg>
+                <button
+                    class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-indigo-600 rounded-full shadow item-center hover:bg-indigo-700 focus:shadow-outline focus:outline-none">
+                  <svg aria-hidden="true" data-prefix="far" data-icon="credit-card" class="w-8"
+                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path fill="currentColor"
+                          d="M527.9 32H48.1C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48.1 48h479.8c26.6 0 48.1-21.5 48.1-48V80c0-26.5-21.5-48-48.1-48zM54.1 80h467.8c3.3 0 6 2.7 6 6v42H48.1V86c0-3.3 2.7-6 6-6zm467.8 352H54.1c-3.3 0-6-2.7-6-6V256h479.8v170c0 3.3-2.7 6-6 6zM192 332v40c0 6.6-5.4 12-12 12h-72c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12zm192 0v40c0 6.6-5.4 12-12 12H236c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12z"/>
+                  </svg>
                   <span class="ml-2 mt-5px">Procéder au paiement</span>
                 </button>
               </a>
@@ -85,25 +88,16 @@
 <script>
 module.exports = {
   props: {
-    songs: { type: Array, default: [] },
-    panier: { type: Object }
+    songs: {type: Array, default: []},
+    panier: {type: Object}
   },
   name: 'Panier',
-  data () {
-    return {
-      prixTotal: this.totalPrice()
-    }
+  data() {
+    return {}
   },
   methods: {
-    removeFromPanier (articleId) {
+    removeFromPanier(articleId) {
       this.$emit('remove-from-panier', articleId)
-    },
-    totalPrice() {
-      let total = 0
-      for (let i = 1; i < panier.articles.length - 1; i++) {
-        total += panier.articles[i].prix
-      }
-      return total
     }
   }
 }
