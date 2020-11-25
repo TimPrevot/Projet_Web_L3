@@ -108,7 +108,10 @@ router.use((req, res, next) => {
 
 // Récupération de toutes les chansons
 router.get('/songs', async (req, res) => {
-    res.json(songs)
+    const result = await client.query({
+        text: `SELECT * FROM songs`
+    })
+    res.json(result.rows)
 })
 
 // Récupération du panier

@@ -40,7 +40,9 @@ var app = new Vue({
         this.songs = res.data
         const res2 = await axios.get('/api/panier')
         this.panier = res2.data
-        try {
+        console.log('toto va ala peche')
+        console.log(this.panier)
+        /*try {
             const res3 = await axios.get('/me')
             this.user = res3.data
             this.isConnected = true
@@ -50,7 +52,7 @@ var app = new Vue({
             } else {
                 console.log('error', err)
             }
-        }
+        }*/
     },
     methods: {
         async addToPanier (articleId) {
