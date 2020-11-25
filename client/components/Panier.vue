@@ -7,7 +7,6 @@
           <tr class="h-12 uppercase">
             <th class="hidden md:table-cell"></th>
             <th class="text-left">Produit</th>
-            <th class="text-left">Quantité</th>
             <th class="text-right">Prix</th>
           </tr>
           </thead>
@@ -21,11 +20,6 @@
               <button @click="removeFromPanier(article.id)" class="text-indigo-700 md:ml-4">
                 <small>(Retirer du panier)</small>
               </button>
-            </td>
-            <td class="hidden text-left md:table-cell">
-                <span class="text-sm lg:text-base font-medium">
-                  1
-                </span>
             </td>
             <td class="hidden text-right md:table-cell">
                 <span class="text-sm lg:text-base font-medium">
