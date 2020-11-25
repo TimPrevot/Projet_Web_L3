@@ -53,6 +53,14 @@ router.post('/login', async (req, res) => {
     }
 })
 
+router.post('/disconnect', async (req, res) => {
+    req.session.userId = undefined
+    res.json({
+        id: undefined,
+        email: undefined
+    })
+})
+
 // Register
 router.post('/register', async (req, res) => {
     const email = req.body.email

@@ -70,9 +70,15 @@ var app = new Vue({
             this.connectClient(client)
         },
         async connectClient (client) {
-            const res3 = await axios.post('/api/login', client)
-            this.client = res3.data
+            const res = await axios.post('/api/login', client)
+            this.client = res.data
             this.isConnected = true
+            this.$router.push('/')
+        },
+        async disconnectClient (client) {
+            const res = await axios.post('/api/disconnect', client)
+            this.client = res.data
+            this.isConnected = false
             this.$router.push('/')
         }
     }
