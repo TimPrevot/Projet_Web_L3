@@ -1,4 +1,3 @@
-/* eslint-disable */
 <template>
   <div class="bg-gray-900 text-gray-300 min-h-screen p-10">
 
@@ -12,7 +11,7 @@
         <h4 class="mt-0 mb-2 uppercase text-gray-500 tracking-widest text-xs">Album</h4>
         <h1 class="mt-0 mb-2 text-white text-4xl">L'album que tout le monde attendait</h1>
 
-        <p class="text-gray-600 mb-2 text-sm">MisterMV feat Mister V, Vald, Carpenter brut, Toxic avenger, m83 </p>
+        <p class="text-gray-600 mb-2 text-sm">MisterMV feat Mister V, Vald, Carpenter Brut, Toxic Avenger, M83 </p>
         <p class="text-gray-600 text-sm">Produit part <a>MisterMV</a> - 5 chansons, 18min 37sec</p>
 
       </div>
