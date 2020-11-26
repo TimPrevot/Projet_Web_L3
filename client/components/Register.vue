@@ -1,5 +1,4 @@
 <template>
-
   <div class="min-h-screen flex items-center justify-center bg-gray-900 text-gray-400 py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-sm mx-auto px-6">
       <div class="relative flex flex-wrap">
