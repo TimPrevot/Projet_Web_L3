@@ -47,7 +47,7 @@
                       id="cardYear"
                       v-model="expireYear"
                   >
-                    <option value="" disabled selected>Anée</option>
+                    <option value="" disabled selected>Année</option>
                     <option
                       v-for="(n, $index) in 12"
                       :value="$index + currentYear"

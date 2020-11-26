@@ -55,14 +55,14 @@ var app = new Vue({
             this.panier.totalPrice = res2.data
         },
         async removeFromPanier (articleId) {
-            const response = await axios.delete('/api/panier/' + articleId)
+            await axios.delete('/api/panier/' + articleId)
             const index = this.panier.articles.findIndex(article => article.id === articleId)
             this.panier.articles.splice(index, 1)
             const res2 = await axios.get('/api/panier/totalPrice')
             this.panier.totalPrice = res2.data
         },
         async addClient (client) {
-            const res = await axios.post('/api/register', client)
+            await axios.post('/api/register', client)
             this.connectClient(client)
         },
         async connectClient (client) {

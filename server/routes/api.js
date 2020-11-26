@@ -6,13 +6,11 @@ const {Client} = require('pg')
 const client = new Client({
     user: 'postgres',
     host: 'localhost',
-    password: '12345abcde',
-    database: 'MV'
+    password: 'abcd1234',
+    database: 'Final_Projet_Web_L3'
 })
 
 client.connect()
-
-// const users = []
 
 let songs = []
 
