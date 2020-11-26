@@ -11,13 +11,12 @@
 
       <form class="px-8 pt-6 pb-8 mb-4 rounded" @submit.prevent="sendEmail">
         <div class="mb-4">
-          <label class="block mb-2 text-sm font-bold text-gray-700" for="email">
+          <label class="block mb-2 text-sm font-bold text-gray-700">
             E-mail
           </label>
           <input
               class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-              id="email"
-              type="email" name="user_email"
+              type="email"
               placeholder="E-mail"
               required
           />
@@ -26,7 +25,6 @@
           <button @click="setEmailToTrue"
               type="submit"
               class="w-full px-4 py-2 font-bold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 focus:outline-none focus:shadow-outline"
-              type="button"
           >Réinitialiser le mot de passe
           </button>
         </div>
