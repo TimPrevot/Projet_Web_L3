@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt')
 const { Client } = require('pg')
-const songs = require('../data/articles')
 
 const client = new Client({
     user: 'postgres',
@@ -14,6 +13,8 @@ const client = new Client({
 client.connect()
 
 const users = []
+
+let songs = []
 
 class Panier {
     constructor () {
@@ -111,12 +112,18 @@ router.get('/songs', async (req, res) => {
     const result = await client.query({
         text: `SELECT * FROM songs`
     })
+    songs = result.rows
     res.json(result.rows)
 })
 
 // Récupération du panier
 router.get('/panier', (req, res) => {
     res.json(req.session.panier)
+})
+
+// Récupération du prix du panier
+router.get('/panier/totalPrice', (req, res) => {
+    res.json(req.session.panier.totalPrice)
 })
 
 // Ajout d'un article au panier
@@ -131,8 +138,7 @@ router.post('/panier', (req, res) => {
 
     if (articleExists && !articleIsAlreadyInPanier) {
         req.session.panier.articles.push(songs.find(a => a.id === articleId))
-        req.session.panier.totalPrice += songs.find(a => a.id === articleId).prix
-        console.log('prix total après ajout: ', req.session.panier.totalPrice)
+        req.session.panier.totalPrice += songs[articleId].prix
         res.json({ id: articleId })
     } else {
         res.status(400).json({ message: 'Invalid parameters' })
@@ -153,7 +159,6 @@ router.delete('/panier/:articleId', (req, res) => {
         const indexToDelete = req.session.panier.articles.findIndex(a => a.id === articleId)
         req.session.panier.articles.splice(indexToDelete, 1)
         req.session.panier.totalPrice -= articleToRemove.prix
-        console.log('prix total après suppression: ', req.session.panier.totalPrice)
         res.json(req.session.panier)
     }
 })

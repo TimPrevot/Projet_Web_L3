@@ -40,19 +40,6 @@ var app = new Vue({
         this.songs = res.data
         const res2 = await axios.get('/api/panier')
         this.panier = res2.data
-        console.log('toto va ala peche')
-        console.log(this.panier)
-        /*try {
-            const res3 = await axios.get('/me')
-            this.user = res3.data
-            this.isConnected = true
-        } catch (err) {
-            if (err.response?.status === 401) {
-                this.isConnected = false
-            } else {
-                console.log('error', err)
-            }
-        }*/
     },
     methods: {
         async addToPanier (articleId) {
@@ -62,11 +49,15 @@ var app = new Vue({
             }
             const response = await axios.post('/api/panier', parameters)
             this.panier.articles.push(response.data)
+            const res2 = await axios.get('/api/panier/totalPrice')
+            this.panier.totalPrice = res2.data
         },
         async removeFromPanier (articleId) {
             const response = await axios.delete('/api/panier/' + articleId)
             const index = this.panier.articles.findIndex(article => article.id === articleId)
             this.panier.articles.splice(index, 1)
+            const res2 = await axios.get('/api/panier/totalPrice')
+            this.panier.totalPrice = res2.data
         },
         async addClient (client) {
             const res = await axios.post('/api/register', client)
