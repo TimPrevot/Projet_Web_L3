@@ -61,7 +61,8 @@
                 </div>
               </div>
               <a href="#">
-                <router-link class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-indigo-600 rounded-full shadow item-center hover:bg-indigo-700 focus:shadow-outline focus:outline-none" :to="{name: 'Paiement'}">
+                <router-link :to="{name: 'Paiement'}"
+                    class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-indigo-600 rounded-full shadow item-center hover:bg-indigo-700 focus:shadow-outline focus:outline-none">
                   <svg aria-hidden="true" data-prefix="far" data-icon="credit-card" class="w-8"
                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                     <path fill="currentColor"
