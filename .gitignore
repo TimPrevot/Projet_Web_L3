@@ -126,3 +126,9 @@ dist
 .idea/**/shelf
 
 .idea/workspace.xml
+
+server/init-songs.js
+
+server/init-db.js
+
+server/clear-songs.js
