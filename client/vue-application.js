@@ -5,6 +5,7 @@ const Album = window.httpVueLoader('./components/Album.vue')
 const Password = window.httpVueLoader('./components/Password.vue')
 const Presentation = window.httpVueLoader('./components/Presentation.vue')
 const Reseaux = window.httpVueLoader('./components/Reseaux.vue')
+const Paiement = window.httpVueLoader('./components/Paiement.vue')
 
 const routes = [
     { path: '/panier', name: 'Panier', component: Panier },
@@ -14,6 +15,7 @@ const routes = [
     { path: '/password', name: 'Password', component: Password },
     { path: '/', name: 'Presentation', component: Presentation },
     { path: '/reseaux', name: 'Reseaux', component: Reseaux },
+    { path: '/paiement', name: 'Paiement', component: Paiement },
     { path: '/*', redirect: '/' }
 ]
 
