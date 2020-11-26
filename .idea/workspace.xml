@@ -88,11 +88,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="npm.init_db" />
       <item itemvalue="npm.clear_db" />
-      <item itemvalue="npm.start" />
-      <item itemvalue="npm.init_songs" />
       <item itemvalue="npm.clear_songs" />
+      <item itemvalue="npm.init_db" />
+      <item itemvalue="npm.init_songs" />
+      <item itemvalue="npm.start" />
     </list>
     <recent_temporary>
       <list>
@@ -113,6 +113,7 @@
       <updated>1606320630699</updated>
       <workItem from="1606320631794" duration="6667000" />
       <workItem from="1606337764395" duration="3553000" />
+      <workItem from="1606376727528" duration="455000" />
     </task>
     <servers />
   </component>
