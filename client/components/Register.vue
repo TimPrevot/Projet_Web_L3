@@ -34,13 +34,16 @@
                 </div>
                 <div class="py-1">
                   <span class="px-1 text-sm">Confirmation du mot de passe</span>
-                  <input placeholder="" type="password"
+                  <input placeholder="" type="password" v-model="confirmPassword"
                         class="text-md block px-3 py-2 rounded-lg w-full bg-white placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none"
                         required>
                 </div>
+                <div v-if="this.passwordIncorrect">
+                  <p class="font-medium justify-center">Veuillez rentrer 2 fois le même mot de passe</p>
+                </div>
                 <div class="flex justify-start">
                   <label class="block font-bold my-4 flex items-center">
-                    <input class="leading-loose text-pink-600 top-0" type="checkbox"/>
+                    <input class="leading-loose text-pink-600 top-0" type="checkbox" required/>
                     <span class="ml-2 text-sm py-2 text-left">Accepter les
                       <a href="#"
                         class="font-semibold text-indigo-500 border-b-2 border-indigo-500 hover:border-indigo-600">
@@ -72,18 +75,24 @@ module.exports = {
     return {
       pseudo: '',
       email: '',
-      password: ''
+      password: '',
+      confirmPassword: '',
+      passwordIncorrect: false
     }
   },
   async mounted() {
   },
   methods: {
     async addClient() {
-      this.$emit('add-client', {
-        pseudo: this.pseudo,
-        email: this.email,
-        password: this.password
-      })
+      if (this.password === this.confirmPassword) {
+        this.$emit('add-client', {
+          pseudo: this.pseudo,
+          email: this.email,
+          password: this.password
+        })
+      } else {
+        this.passwordIncorrect = true
+      }
     }
   }
 }
